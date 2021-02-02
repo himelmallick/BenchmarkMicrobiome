@@ -141,7 +141,7 @@ list.limma<-function(physeq, transformation = 'NONE', multiple_qvalues = TRUE){
       metadata<-physeq$metadata
       libSize<-physeq$libSize
       ID<-physeq$ID
-      DD<-fit.limmaVOOM(features, metadata, libSize, ID, transformation, multiple_qvalues)
+      DD<-fit.limma(features, metadata, libSize, ID, transformation, multiple_qvalues)
       DD$pairwiseAssociation<-paste('pairwiseAssociation', 1:nrow(DD), sep='')
       wh.TP<-intersect(grep("[[:print:]]+\\_TP$", DD$metadata), grep("[[:print:]]+\\_TP$", DD$feature))
       newname<-paste0(DD$pairwiseAssociation[wh.TP], "_TP")
